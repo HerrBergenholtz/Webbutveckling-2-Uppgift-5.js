@@ -13,12 +13,10 @@ function init() {
     inputElem[1] = document.getElementById("input1");
     inputElem[2] = document.getElementById("input2");
     inputElem[3] = document.getElementById("inut3");
-    msgElem = document.getElementById("message");
     fruitImg = document.getElementById("fruitImg");
-    button = document.getElementById("btn1");
-    button.addEventHandler(event => {
-        showFruit();
-    });
+    msgElem = document.getElementById("message");
+    button = document.getElementById("btn1").onclick = showFruit
+
 } // End init
 window.onload = init; // Se till att init aktiveras då sidan är inladdad
 
@@ -27,7 +25,13 @@ function showFruit() {
     let fruitUrl;
 
     nr = Number(inputElem[1].value);
-    fruitUrl = "fruit" + nr + ".jpg";
-    fruitImg.src = "fruit1.jpg";
+    if (isNaN(nr)){
+        msgElem.innerHTML = "<p>Du måste skriva in ett tal</p>"
+        return
+    } 
 
+    fruitUrl = "pics/fruit" + nr + ".jpg";
+    fruitImg.src = fruitUrl
 }   
+
+
