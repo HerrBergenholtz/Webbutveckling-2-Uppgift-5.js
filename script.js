@@ -30,6 +30,11 @@ function showFruit() {
         return
     } 
 
+    if (nr<1, nr>5){
+        msgElem.innerHTML = "<p>Du måste skriva ett nummer mellan 1 och 5"
+        return
+    }
+
     fruitUrl = "pics/fruit" + nr + ".jpg";
     fruitImg.src = fruitUrl
 }   
