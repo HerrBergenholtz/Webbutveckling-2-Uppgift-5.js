@@ -25,6 +25,7 @@ function init() { //Denna funktionen kommer att köras när webbsidan laddas in,
     fruitNames[3] = "citron";
     fruitNames[4] = "apelsin";
     fruitNames[5] = "päron";
+    console.log(fruitNames)
     fruitNr = 0;
     selFruitsElem = document.getElementById("selectedFruits");
     buttonShowImage = document.getElementById("btn1");
@@ -46,7 +47,7 @@ function showFruit() {
         console.log("Funkar icke");
     }
 
-    fruitUrl = "pics/fruit" + nr + ".jpg";
+    fruitUrl = `pics/fruit${nr}.jpg`; // "pics/fruit" + nr + ".jpg"  
     fruitImg.src = fruitUrl;
 
     fruitNr = nr;
@@ -55,11 +56,11 @@ function showFruit() {
 function checkName() {
     let name;
 
-    if(fruitNr == 0) {
+    if (fruitNr == 0) {
         msgElem.innerHTML = "<p>Du måste först välja en frukt genom att skriva in ett nummer i första fältet </p>";
         return;
     }
-    
+
     name = inputElem[2].value;
 
     if (name === fruitNames[fruitNr]) {
@@ -80,7 +81,7 @@ function getNr(elemNr, high) {
     }
 
     if (nr < 1 || nr > high) {
-        msgElem.innerHTML = "<p>Du måste skriva ett nummer mellan 1 och " + high +"</p>" ;
+        msgElem.innerHTML = "<p>Du måste skriva ett nummer mellan 1 och " + high + "</p>";
         return null;
     }
 
@@ -92,7 +93,7 @@ function getNr(elemNr, high) {
     }
 
     return nr;
-}   
+}
 
 function addFruits() {
     let amount;
@@ -106,12 +107,12 @@ function addFruits() {
 
     amount = getNr(3, 9);
 
-    if(amount == null) {
-        console.log ("Funkar icke");
+    if (amount == null) {
+        console.log("Funkar icke");
     }
 
     imgList = "";
-    for (i=0; i<amount;i++) {
+    for (i = 0; i < amount; i++) {
         imgList += "<img src='pics/fruit" + fruitNr + ".jpg' alt='frukt'>";
     }
 
