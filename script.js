@@ -13,20 +13,20 @@ let buttonAddFruits; //Tredje knappen som man trycker på för att lägga till f
 // Funktion som körs då hela webbsidan är inladdad, dvs då all HTML-kod är utförd.
 // Initiering av globala variabler samt koppling avfunktioner till knapparna.
 function init() { //Denna funktionen kommer att köras när webbsidan laddas in, då kommer den att definera variablerna ovan till element i html koden genom att välja deras id.
-    inputElem = [];
+    inputElem = []; 
     inputElem[1] = document.getElementById("input1");
     inputElem[2] = document.getElementById("input2");
     inputElem[3] = document.getElementById("input3");
     msgElem = document.getElementById("message");
     fruitImg = document.getElementById("fruitImg");
-    fruitNames = [];
+    fruitNames = []; //Definerar fruitNames som en array.
     fruitNames[1] = "äppel";
     fruitNames[2] = "banan";
     fruitNames[3] = "citron";
     fruitNames[4] = "apelsin";
-    fruitNames[5] = "päron";
+    fruitNames[5] = "päron"; //Definerar fruitNames arrayen med frukternas namn, jag börjar från 1 så att det också korresponderar till rätt fruktnummer.
     console.log(fruitNames)
-    fruitNr = 0;
+    fruitNr = 0; //Numret av frukter som skrivs ut är 0 om användaren inte lägger in ett annat värde eftersom att vi inte vill att det ska skrivas ut något förens användaren gör något.
     selFruitsElem = document.getElementById("selectedFruits");
     buttonShowImage = document.getElementById("btn1");
     buttonShowImage.addEventListener("click", showFruit);
